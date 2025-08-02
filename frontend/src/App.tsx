@@ -71,7 +71,7 @@ function App() {
 
     try {
       await fetch(
-        `${import.meta.env.VITE_API_URL}/api/materias/changeStatus/${codigo}`,
+        `${url}/api/materias/changeStatus/${codigo}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
