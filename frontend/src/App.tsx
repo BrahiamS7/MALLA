@@ -70,11 +70,14 @@ function App() {
     console.log("cambiando materia:" + codigo);
 
     try {
-      await fetch(`/api/materias/changeStatus/${codigo}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-      });
+      await fetch(
+        `${import.meta.env.VITE_API_URL}/api/materias/changeStatus/${codigo}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+        }
+      );
       console.log("recargando materias");
       cargarMaterias();
     } catch (error) {

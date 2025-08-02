@@ -4,11 +4,11 @@ import cors from 'cors'
 import env from 'dotenv'
 
 //IMPORTACIONES DE RUTAS
-import materiasRoutes from './routes/materias.routes.js'
+import materiasRoutes from './routes/materias.routes.js';
 
 // CONSTANTES
 const app=express();
-const port=3001;
+const port=process.env.PORT || 3001;
 env.config()
 
 // UTILIDADES
@@ -27,6 +27,6 @@ app.use('/api/materias',materiasRoutes)
 
 
 //RUTA LISTEN
-app.listen(process.env.PORT || 3001,()=>{
+app.listen(port,()=>{
     console.log(`SERVER RUNNING IN PORT ${process.env.PORT}`);
 })
