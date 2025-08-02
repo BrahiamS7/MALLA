@@ -10,7 +10,7 @@ function App() {
     facultad: string;
     estado: string;
   };
-  const url = import.meta.env.VITE_API_URL;
+  const url = "https://malla-33ng.onrender.com";
   const [materias, setMaterias] = useState<Materia[]>([]);
   const [creditos, setCreditos] = useState("");
   // const [codigo, setCodigo] = useState("");
@@ -67,6 +67,7 @@ function App() {
   //   }
   // };
   const changeStatus = async (codigo: number) => {
+    const url = "https://malla-33ng.onrender.com";
     console.log("cambiando materia:" + codigo);
 
     try {
