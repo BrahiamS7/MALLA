@@ -1,0 +1,70 @@
+*{
+  transition: all ease .1s;
+}
+
+.bloqueado{
+    opacity: .5;
+    pointer-events: none;
+}
+.tachado{
+    position: relative;
+    overflow:hidden;
+    border: 2px solid red;
+}
+.tachado::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 280%;
+    height: 3px;
+    background-color: red;
+    transform: rotate(-42deg);
+}
+.card-tachada {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-tachada::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 2px;
+  background-color: red;
+  transform: rotate(-45deg);
+  transform-origin: left top;
+}
+.bg-morado {
+  background-color: purple !important;
+  color: white;
+}
+.azul{
+  background-color: #0FDBF2;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.verde{
+  background-color: #198452;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.morado{
+  background-color: purple;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.gris{
+  background-color: #6C757D;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.areas{
+  padding: 5px;
+}
