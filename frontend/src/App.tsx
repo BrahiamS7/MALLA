@@ -13,6 +13,7 @@ function App() {
   const url = import.meta.env.VITE_API_URL;
   const [materias, setMaterias] = useState<Materia[]>([]);
   const [creditos, setCreditos] = useState("");
+  console.log("API URL:", import.meta.env.VITE_API_URL);
   useEffect(() => {
     cargarMaterias();
   }, []);
