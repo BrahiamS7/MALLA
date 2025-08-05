@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 env.config();
 const allowedOrigins = [
-  "https://malla-q7osojwy5-brahiams7s-projects.vercel.app/",
+  "https://malla-q7osojwy5-brahiams7s-projects.vercel.app",
 ];
 
 // UTILIDADES
