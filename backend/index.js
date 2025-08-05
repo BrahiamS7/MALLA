@@ -16,7 +16,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://malla-9xdt2td2l-brahiams7s-projects.vercel.app",
+      "https://malla-r9xd2td2l-brahiams7s-projects.vercel.app",
       "https://malla-33ng.onrender.com",
     ],
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
