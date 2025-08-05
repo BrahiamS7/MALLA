@@ -17,7 +17,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://malla-brahiams7s-projects.vercel.app",
-      "https://malla-33ng.onrender.com/",
+      "https://malla-33ng.onrender.com",
     ],
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
     credentials: "true",
