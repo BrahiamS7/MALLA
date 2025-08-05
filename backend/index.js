@@ -10,10 +10,16 @@ import materiasRoutes from "./routes/materias.routes.js";
 const app = express();
 const port = process.env.PORT || 3001;
 env.config();
+const allowedOrigins = [
+  "https://malla-pk08grn7f-brahiams7s-projects.vercel.app",
+];
 
 // UTILIDADES
 app.use(
-  cors()
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
