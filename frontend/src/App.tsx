@@ -13,12 +13,6 @@ function App() {
   const url = "https://malla-33ng.onrender.com";
   const [materias, setMaterias] = useState<Materia[]>([]);
   const [creditos, setCreditos] = useState("");
-  // const [codigo, setCodigo] = useState("");
-  // const [nombre, setNombre] = useState("");
-  // const [creditos, setCreditos] = useState("");
-  // const [semestre, setSemestre] = useState("");
-  // const [facultad, setFacultad] = useState("");
-
   useEffect(() => {
     cargarMaterias();
   }, []);
@@ -34,38 +28,6 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  // const handleSubmit = () => {
-  //   fetch("/api/materias/addMate", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ codigo, nombre, semestre, creditos, facultad }),
-  //     credentials: "include",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setCodigo("");
-  //       setSemestre("");
-  //       setNombre("");
-  //       setCreditos("");
-  //       setFacultad("");
-  //       cargarMaterias();
-  //       setMsg(data.msg);
-  //     });
-  // };
-  // const handleDelete = async (codigo: number) => {
-  //   try {
-  //     const res = await fetch(`/api/materias/deleteMate/${codigo}`, {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       credentials: "include",
-  //     });
-  //     const data = await res.json();
-  //     setMsg(data.msg);
-  //     cargarMaterias();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   const changeStatus = async (codigo: number) => {
     const url = "https://malla-33ng.onrender.com";
     console.log("cambiando materia:" + codigo);
@@ -169,43 +131,6 @@ function App() {
             </div>
           ))}
       </div>
-
-      {/* <form style={{ padding: "20px" }}>
-        <input
-          type="number"
-          value={codigo}
-          onChange={(e) => setCodigo(e.target.value)}
-          placeholder="Codigo"
-        />
-        <input
-          type="text"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-          placeholder="Nombre de materia"
-        />
-        <input
-          type="number"
-          value={creditos}
-          onChange={(e) => setCreditos(e.target.value)}
-          placeholder="Creditos"
-        />
-        <input
-          type="number"
-          value={semestre}
-          onChange={(e) => setSemestre(e.target.value)}
-          placeholder="Semestre"
-        />
-        <select value={facultad} onChange={(e) => setFacultad(e.target.value)}>
-          <option value="">Escoger facultad</option>
-          <option value="ciencias basicas">Ciencias Basicas</option>
-          <option value="ciencias ingenieria">Ciencias en Ingenieria</option>
-          <option value="complementaria">Complementaria</option>
-          <option value="ingenieria aplicada">Ingenieria aplicada</option>
-        </select>
-        <input type="text" readOnly placeholder="Estado" />
-        <input type="submit" value="Enviar" onClick={handleSubmit} />
-      </form>
-      <p>{msg}</p> */}
       <div
         style={{
           display: "flex",

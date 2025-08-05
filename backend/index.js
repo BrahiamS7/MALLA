@@ -12,7 +12,15 @@ const port=process.env.PORT || 3001;
 env.config()
 
 // UTILIDADES
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://malla-brahiams7s-projects.vercel.app"
+    ],
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+  })
+);
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
