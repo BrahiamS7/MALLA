@@ -21,6 +21,7 @@ function App() {
     fetch(`${url}/api/materias/`)
       .then((res) => res.json())
       .then((data) => {
+        console.log('Materias a cargar:',data.data);
         setMaterias(data.data);
         setCreditos(data.creditos);
         console.log("Materias cargadas:", data.data);
