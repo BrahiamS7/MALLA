@@ -21,6 +21,8 @@ function App() {
     fetch(`${url}/api/materias/`)
       .then((res) => res.json())
       .then((data) => {
+        console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+
         console.log("Materias a cargar:", data.data);
         setMaterias(data.data);
         setCreditos(data.creditos);
