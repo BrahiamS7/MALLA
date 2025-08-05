@@ -10,7 +10,7 @@ function App() {
     facultad: string;
     estado: string;
   };
-  const url = "https://malla-33ng.onrender.com";
+  const url = import.meta.env.VITE_API_URL;
   const [materias, setMaterias] = useState<Materia[]>([]);
   const [creditos, setCreditos] = useState("");
   useEffect(() => {
@@ -21,7 +21,7 @@ function App() {
     fetch(`${url}/api/materias/`)
       .then((res) => res.json())
       .then((data) => {
-        console.log('Materias a cargar:',data.data);
+        console.log("Materias a cargar:", data.data);
         setMaterias(data.data);
         setCreditos(data.creditos);
         console.log("Materias cargadas:", data.data);
@@ -30,18 +30,15 @@ function App() {
   };
 
   const changeStatus = async (codigo: number) => {
-    const url = "https://malla-33ng.onrender.com";
+    const url = import.meta.env.VITE_API_URL;
     console.log("cambiando materia:" + codigo);
 
     try {
-      await fetch(
-        `${url}/api/materias/changeStatus/${codigo}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          credentials: "include",
-        }
-      );
+      await fetch(`${url}/api/materias/changeStatus/${codigo}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      });
       console.log("recargando materias");
       cargarMaterias();
     } catch (error) {
