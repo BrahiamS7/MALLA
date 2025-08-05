@@ -13,15 +13,7 @@ env.config();
 
 // UTILIDADES
 app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://malla-pk08grn7f-brahiams7s-projects.vercel.app",
-      "https://malla-33ng.onrender.com",
-    ],
-    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
-    credentials: "true",
-  })
+  cors()
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
